@@ -3,7 +3,6 @@ import socket
 HOST = "127.0.0.1"  # This is the loopback address
 PORT = 65432        # The port used by the server
 ADDR = (HOST, PORT)
-NUMBER_CHR = ["1","2","3","4","5","6","7","8","9","0"]
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
@@ -35,10 +34,9 @@ def choice(conn, addr):
         conn.close()
 
     
-    #conn.close()
         
 
-# The method to perform the conversion between letter/string input to an integer
+# The method to perform the conversion between string input to an integer
 def str_to_num(conn):
     instruction = "Please enter a word you want to play with:"
     conn.sendall(instruction.encode('utf-8'))
